@@ -1,4 +1,13 @@
+# config for nested sway session, use in scratchpad
 include config-default
+
+# hack until I learn how to properly save sessions
+exec_always pcmanfm ~/Downloads/youtube/
+exec_always vlc
+workspace number "2 Auto "
+exec_always chromium-browser
+workspace number "3 Auto "
+exec_always lxterminal
 
 bindsym $mod+v exec WAYLAND_DISPLAY=wayland-0 wl-paste -n | WAYLAND_DISPLAY=wayland-1 wl-copy
 bindsym $smod+v exec WAYLAND_DISPLAY=wayland-0 wl-paste -n | WAYLAND_DISPLAY=wayland-1 wl-copy
