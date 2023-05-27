@@ -1,0 +1,20 @@
+include config-default
+
+bindsym $emod+Tab mode "passthrough"
+bindsym $emod+Backspace scratchpad show;resize set 1850 1020; mode "passthrough"
+
+mode passthrough {
+    bindsym $emod+Backspace scratchpad show; mode "default"
+    bindsym $emod+Tab mode "default"
+}
+
+bindsym $mod+c move scratchpad;exec touch /tmp/scratchpad
+bindsym $mod+b scratchpad show;resize set 1850 1020
+bindsym $smod+space floating toggle;exec rm  /tmp/scratchpad
+bindsym $mod+g exec sway -c ~/.config/sway/config-scratch
+
+# pasting from nested sway session clipboard
+bindsym $smod+v exec WAYLAND_DISPLAY=wayland-1 wl-paste -n | WAYLAND_DISPLAY=wayland-0 wl-copy
+
+# always move nested sway session to scratchpad
+for_window [app_id="wlroots"] move scratchpad

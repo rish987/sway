@@ -1,0 +1,198 @@
+# Default config for sway
+#
+# Copy this to ~/.config/sway/config and edit it to your liking.
+#
+# Read `man 5 sway` for a complete reference.
+
+###############
+# My settings #
+###############
+
+## Screen Resolution ##
+## Display Resolutions: swaymsg -t get_outputs
+#output HDMI-A-1 res 1280x1024
+
+exec xhost si:localuser:root
+exec dunst -config ~/.config/sway/dunstrc
+exec dex -a -s ~/.config/autostart/
+exec gnome-calendar --gapplication-service
+exec {
+    gsettings set org.gnome.desktop.interface gtk-theme PiXflat
+    gsettings set org.gnome.desktop.interface icon-theme PiXflat
+    gsettings set org.gnome.desktop.interface cursor-theme PiXflat
+}
+
+## WallPaper/Background ##
+output * bg ~/.config/sway/i3-wm.png fill
+
+## Restart Run On Reload ##
+exec_always ~/.config/sway/autotiling -w 1 2 3
+
+set $mod Mod1
+set $smod Mod1+Shift
+set $emod Shift
+
+## Keyboard Shortcuts ##
+bindsym $mod+F1 exec yad --icons --read-dir=$HOME/Applications --sort-by-name --icon-size=48 --button='close' --title='Apps' --term='lxterminal' --close-on-unfocus
+bindsym $mod+F2 exec x-www-browser
+bindsym $mod+F3 exec pcmanfm
+bindsym $mod+F4 exec lxterminal
+bindsym $mod+t exec lxterminal
+
+## Windows ##
+default_orientation auto
+default_border pixel 1
+default_floating_border pixel 1
+focus_on_window_activation smart
+focus_follows_mouse no
+gaps inner 0
+gaps outer 0
+gaps horizontal 0
+gaps vertical 0
+smart_borders on
+smart_gaps on
+title_align center
+font pango:12
+#workspace_layout tabbed
+
+## Floating Window ##
+## Find Window Name: swaymsg -t get_tree | grep app_id
+for_window [app_id="gnome-calendar"] floating enable, resize set 1024 768
+for_window [title="^Calendar$"] floating enable
+for_window [class="Gpicview"] floating enable, resize set 1024 768
+for_window [title="^galculator$"] floating enable
+for_window [title="^Download$"] floating enable
+for_window [title="^Volume$"] floating enable
+for_window [title="^Apps$"] floating enable, resize set 900 700
+for_window [title="^Exit$"] floating enable
+for_window [floating] move position center
+
+## Set Variables ##
+set $term x-terminal-emulator
+set $menu dmenu_path | dmenu -b -fn "*-18-*" -l 5 | xargs swaymsg exec --
+
+bindsym $smod+e mode $exit
+## Modes ##
+set $exit [S]hutdown [R]eboot [L]ogout
+mode "$exit" {
+    bindsym s exec --no-startup-id systemctl poweroff
+    bindsym r exec --no-startup-id systemctl reboot
+    bindsym l exec --no-startup-id swaymsg exit
+    bindsym e exec --no-startup-id sway exit
+
+    bindsym Escape mode "default"
+}
+
+###################
+# End My Settings #
+###################
+
+# Home row direction keys, like vim
+set $left h
+set $down j
+set $up k
+set $right l
+
+# Kill focused window
+bindsym $smod+q kill
+
+# Reload the configuration file
+bindsym $smod+r reload
+
+# Exit sway (logs you out of your Wayland session)
+#bindsym $smod+e exec swaynag -t warning -m 'You pressed the exit shortcut.' -B ' Logout ' 'swaymsg exit' -B ' Reboot ' 'systemctl reboot' -B ' Shutdown ' 'systemctl poweroff'
+#
+# Moving around:
+#
+# Move your focus around
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+# Or use $mod+[up|down|left|right]
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+bindsym $emod+Space focus right
+bindsym $emod+Escape workspace back_and_forth
+
+bindsym $mod+n focus right
+bindsym $smod+n workspace back_and_forth
+bindsym $mod+Space workspace back_and_forth
+
+# Move the focused window with the same, but add Shift
+bindsym $smod+$left move left
+bindsym $smod+$down move down
+bindsym $smod+$up move up
+bindsym $smod+$right move right
+# Ditto, with arrow keys
+bindsym $smod+Left move left
+bindsym $smod+Down move down
+bindsym $smod+Up move up
+bindsym $smod+Right move right
+#
+# Workspaces:
+#
+# Switch to workspace
+bindsym $mod+1 workspace number "1"
+bindsym $mod+2 workspace number "2"
+bindsym $mod+3 workspace number "3"
+bindsym $mod+4 workspace number "4"
+# Move focused container to workspace
+bindsym $smod+1 move container to workspace number "1"
+bindsym $smod+2 move container to workspace number "2"
+bindsym $smod+3 move container to workspace number "3"
+bindsym $smod+4 move container to workspace number "4"
+
+# You can "split" the current object of your focus with
+# $mod+p or $mod+c, for horizontal and vertical splits
+# respectively.
+bindsym $mod+p splith
+bindsym $mod+x splitv
+#bindsym $mod+v workspace back_and_forth
+
+bindsym $smod+m exec pactl -- set-sink-volume @DEFAULT_SINK@ -5%
+bindsym $smod+b exec pactl -- set-sink-volume @DEFAULT_SINK@ +5%
+
+# Switch the current container between different layout styles
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# Make the current focus fullscreen
+bindsym $mod+f fullscreen
+
+# Move focus to the parent container
+bindsym $mod+a focus parent
+
+#
+# Resizing containers:
+#
+mode "resize" {
+    # left will shrink the containers width
+    # right will grow the containers width
+    # up will shrink the containers height
+    # down will grow the containers height
+    bindsym $left resize shrink width 10px
+    bindsym $down resize grow height 10px
+    bindsym $up resize shrink height 10px
+    bindsym $right resize grow width 10px
+
+    # Ditto, with arrow keys
+    bindsym Left resize shrink width 10px
+    bindsym Down resize grow height 10px
+    bindsym Up resize shrink height 10px
+    bindsym Right resize grow width 10px
+    bindsym s resize set 1850 1020
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+# Include Directories
+include /etc/sway/config.d/*
+include /etc/sway/config-vars.d/*

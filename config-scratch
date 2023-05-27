@@ -1,0 +1,4 @@
+include config-default
+
+bindsym $mod+v exec WAYLAND_DISPLAY=wayland-0 wl-paste -n | WAYLAND_DISPLAY=wayland-1 wl-copy
+bindsym $smod+v exec WAYLAND_DISPLAY=wayland-0 wl-paste -n | WAYLAND_DISPLAY=wayland-1 wl-copy
