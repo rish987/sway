@@ -1,0 +1,17 @@
+# terminal emulator
+set $term lxterminal
+# internet browser
+set $browser google-chrome
+set $filetree nautilus
+# scratchpad size
+set $scratchw 1300
+set $scratchh 730
+# scratchpad media dir
+set $scratchdir /media/rish/3662-6638/
+
+# WAYLAND_DISPLAY env variable value for primary/nested
+set $waydisp wayland-1
+set $waydispnest wayland-2
+
+bindsym $mod+i exec sudo brightnessctl s 5%+
+bindsym $mod+u exec sudo brightnessctl s 5%-

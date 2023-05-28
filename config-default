@@ -8,9 +8,11 @@
 # My settings #
 ###############
 
-## Screen Resolution ##
-## Display Resolutions: swaymsg -t get_outputs
-#output HDMI-A-1 res 1280x1024
+set $mod Mod1
+set $smod Mod1+Shift
+set $emod Shift
+
+include params/laptop
 
 exec xhost si:localuser:root
 exec dunst -config ~/.config/sway/dunstrc
@@ -28,21 +30,17 @@ output * bg ~/.config/sway/i3-wm.png fill
 ## Restart Run On Reload ##
 exec_always ~/.config/sway/autotiling -w 1 2 3
 
-set $mod Mod1
-set $smod Mod1+Shift
-set $emod Shift
-
 ## Keyboard Shortcuts ##
-bindsym $mod+F1 exec yad --icons --read-dir=$HOME/Applications --sort-by-name --icon-size=48 --button='close' --title='Apps' --term='lxterminal' --close-on-unfocus
-bindsym $mod+F2 exec x-www-browser
-bindsym $mod+F3 exec pcmanfm
-bindsym $mod+F4 exec lxterminal
-bindsym $mod+t exec lxterminal
+bindsym $mod+F1 exec yad --icons --read-dir=$HOME/Applications --sort-by-name --icon-size=48 --button='close' --title='Apps' --term='$term' --close-on-unfocus
+bindsym $mod+F2 exec $browser
+bindsym $mod+F3 exec $filetree
+bindsym $mod+F4 exec $term
+bindsym $mod+t exec $term
 
 ## Windows ##
 default_orientation auto
-default_border pixel 1
-default_floating_border pixel 1
+default_border pixel 3
+default_floating_border pixel 3
 focus_on_window_activation smart
 focus_follows_mouse no
 gaps inner 0
@@ -68,7 +66,6 @@ for_window [title="^Exit$"] floating enable
 for_window [floating] move position center
 
 ## Set Variables ##
-set $term x-terminal-emulator
 set $menu dmenu_path | dmenu -b -fn "*-18-*" -l 5 | xargs swaymsg exec --
 
 bindsym $smod+e mode $exit
