@@ -1,7 +1,8 @@
 # terminal emulator
 set $term lxterminal
 # internet browser
-set $browser chromium-browser
+set $browser chromium
+set $browser_datadir /home/rish/snap/chromium/common/chromium/
 set $filetree pcmanfm
 # scratchpad size
 set $scratchw 1850

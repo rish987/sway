@@ -1,0 +1,9 @@
+# config for nested sway session, use in scratchpad
+include config-default
+
+# hack until I learn how to properly save sessions
+exec $filetree $scratchdir
+exec vlc
+workspace number "2"
+exec bash $curr/nested_chrome.sh media $browser $browser_datadir
+workspace number "1"

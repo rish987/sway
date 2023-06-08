@@ -12,7 +12,9 @@ set $mod Mod1
 set $smod Mod1+Shift
 set $emod Shift
 
-include params/laptop
+set $curr $HOME/.config/sway
+
+include params/pi
 
 exec xhost si:localuser:root
 exec dunst -config ~/.config/sway/dunstrc
@@ -112,8 +114,8 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-bindsym $emod+Space focus right
-bindsym $emod+Escape workspace back_and_forth
+bindsym $emod+Space exec swayr next-tiled-window current-workspace
+bindsym $emod+Backspace workspace back_and_forth
 
 bindsym $mod+n focus right
 bindsym $smod+n workspace back_and_forth
@@ -189,7 +191,10 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
+bindsym $mod+d exec $menu
 
 # Include Directories
 include /etc/sway/config.d/*
 include /etc/sway/config-vars.d/*
+
+exec swayrd > /dev/null 2>&1
