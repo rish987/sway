@@ -2,6 +2,7 @@ include config-default
 
 bindsym $emod+Tab mode "passthrough"
 bindsym $emod+Escape exec bash $curr/open_scratch.sh $currscratch $scratchw $scratchh
+bindsym $mod+Escape exec bash $curr/open_scratch.sh $currscratch $scratchw $scratchh
 
 mode passthrough {
     bindsym $emod+Escape scratchpad show; mode "default"

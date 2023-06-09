@@ -116,8 +116,9 @@ bindsym $mod+Right focus right
 
 bindsym $emod+Space exec swayr next-tiled-window current-workspace
 bindsym $emod+Backspace workspace back_and_forth
+bindsym $mod+n workspace back_and_forth
+bindsym $mod+p exec swayr next-tiled-window current-workspace
 
-bindsym $mod+n focus right
 bindsym $smod+n workspace back_and_forth
 bindsym $mod+Space workspace back_and_forth
 
@@ -148,8 +149,8 @@ bindsym $smod+4 move container to workspace number "4"
 # You can "split" the current object of your focus with
 # $mod+p or $mod+c, for horizontal and vertical splits
 # respectively.
-bindsym $mod+p splith
-bindsym $mod+x splitv
+# bindsym $mod+p splith
+# bindsym $mod+x splitv
 #bindsym $mod+v workspace back_and_forth
 
 bindsym $smod+m exec pactl -- set-sink-volume @DEFAULT_SINK@ -5%
