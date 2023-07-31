@@ -8,5 +8,3 @@ workspace number "2"
 exec_always $browser
 workspace number "3"
 exec_always $term
-
-bindsym $smod+v exec WAYLAND_DISPLAY=$waydisp wl-paste -n | WAYLAND_DISPLAY=$waydispnest wl-copy

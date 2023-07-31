@@ -6,4 +6,5 @@ exec $filetree $scratchdir
 exec vlc
 workspace number "2"
 exec bash $curr/nested_chrome.sh media $browser $browser_datadir
+bindsym $mod+a exec echo "$curr/nested_chrome.sh media $browser $browser_datadir" > ~/test
 workspace number "1"

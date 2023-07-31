@@ -1,4 +1,4 @@
 # config for nested sway session, use in scratchpad
 include config-default
 
-exec bash $curr/nested_chrome.sh browser $browser $browser_datadir
+exec $browser

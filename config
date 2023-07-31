@@ -10,20 +10,17 @@ mode passthrough {
     bindsym $emod+Tab mode "default"
     bindsym $mod+m scratchpad show; set $currscratch browser; exec bash $curr/open_scratch.sh browser $scratchw $scratchh
     bindsym $mod+b scratchpad show; set $currscratch media;   exec bash $curr/open_scratch.sh media $scratchw $scratchh
-    bindsym $mod+z scratchpad show; set $currscratch mail;    exec bash $curr/open_scratch.sh mail $scratchw $scratchh
+    bindsym $mod+n scratchpad show; set $currscratch mail;    exec bash $curr/open_scratch.sh mail $scratchw $scratchh
 }
 
-bindsym $mod+c move scratchpad;exec touch /tmp/scratchpad
+# bindsym $mod+c move scratchpad;exec touch /tmp/scratchpad
 # bindsym $mod+b scratchpad show;resize set $scratchw $scratchh
 bindsym $smod+space floating toggle;exec rm  /tmp/scratchpad
 bindsym $mod+g exec sway -c ~/.config/sway/config-scratch && sway move scratchpad
 
-# pasting from nested sway session clipboard
-bindsym $smod+v exec WAYLAND_DISPLAY=$waydispnest wl-paste -n | WAYLAND_DISPLAY=$waydisp wl-copy
-
 bindsym $mod+m set $currscratch browser; exec bash $curr/open_scratch.sh browser $scratchw $scratchh
 bindsym $mod+b set $currscratch media;   exec bash $curr/open_scratch.sh media $scratchw $scratchh
-bindsym $mod+z set $currscratch mail;    exec bash $curr/open_scratch.sh mail $scratchw $scratchh
+bindsym $mod+n set $currscratch mail;    exec bash $curr/open_scratch.sh mail $scratchw $scratchh
 
 exec lxterminal
 

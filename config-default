@@ -14,7 +14,7 @@ set $emod Shift
 
 set $curr $HOME/.config/sway
 
-include params/pi
+include params/this
 
 exec xhost si:localuser:root
 exec dunst -config ~/.config/sway/dunstrc
@@ -115,8 +115,9 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 bindsym $emod+Space exec swayr next-tiled-window current-workspace
+bindsym $mod+v exec "swayr next-tiled-window current-workspace"
 bindsym $emod+Backspace workspace back_and_forth
-bindsym $mod+n workspace back_and_forth
+#bindsym $mod+n workspace back_and_forth
 bindsym $mod+p exec swayr next-tiled-window current-workspace
 
 bindsym $smod+n workspace back_and_forth
@@ -165,7 +166,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+f fullscreen
 
 # Move focus to the parent container
-bindsym $mod+a focus parent
+# bindsym $mod+a focus parent
 
 #
 # Resizing containers:
@@ -198,4 +199,5 @@ bindsym $mod+d exec $menu
 include /etc/sway/config.d/*
 include /etc/sway/config-vars.d/*
 
-exec swayrd > /dev/null 2>&1
+bindsym $mod+c exec swayrd > /dev/null 2>&1
+exec swayrd > /dev/null 2>&1 || swayrd > /dev/null 2>&1
