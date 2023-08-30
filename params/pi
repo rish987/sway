@@ -1,8 +1,8 @@
 # terminal emulator
 set $term lxterminal
 # internet browser
-set $browser /snap/chromium/current/usr/lib/chromium-browser/chrome
-set $browser_datadir /home/rish/snap/chromium/common/chromium
+set $browser chromium
+set $browser_datadir /home/rish/.config/chromium/
 
 set $filetree pcmanfm
 

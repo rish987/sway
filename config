@@ -2,11 +2,11 @@ include config-default
 
 bindsym $emod+Tab mode "passthrough"
 bindsym $emod+Escape exec bash $curr/open_scratch.sh $currscratch $scratchw $scratchh
-bindsym $mod+Escape exec bash $curr/open_scratch.sh $currscratch $scratchw $scratchh
+bindsym $mod+x exec bash $curr/open_scratch.sh $currscratch $scratchw $scratchh
 
 mode passthrough {
     bindsym $emod+Escape scratchpad show; mode "default"
-    bindsym $mod+Escape scratchpad show; mode "default"
+    bindsym $mod+x scratchpad show; mode "default"
     bindsym $emod+Tab mode "default"
     bindsym $mod+m scratchpad show; set $currscratch browser; exec bash $curr/open_scratch.sh browser $scratchw $scratchh
     bindsym $mod+b scratchpad show; set $currscratch media;   exec bash $curr/open_scratch.sh media $scratchw $scratchh

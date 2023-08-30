@@ -115,13 +115,11 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 bindsym $emod+Space exec swayr next-tiled-window current-workspace
-bindsym $mod+v exec "swayr next-tiled-window current-workspace"
 bindsym $emod+Backspace workspace back_and_forth
-#bindsym $mod+n workspace back_and_forth
+bindsym $mod+Escape workspace back_and_forth
 bindsym $mod+p exec swayr next-tiled-window current-workspace
 
 bindsym $smod+n workspace back_and_forth
-bindsym $mod+Space workspace back_and_forth
 
 # Move the focused window with the same, but add Shift
 bindsym $smod+$left move left
@@ -167,6 +165,8 @@ bindsym $mod+f fullscreen
 
 # Move focus to the parent container
 # bindsym $mod+a focus parent
+
+bindsym $mod+u exec $HOME/ssh-clipboard.sh
 
 #
 # Resizing containers:
