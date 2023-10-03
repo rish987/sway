@@ -12,5 +12,5 @@ set $scratchh 730
 # scratchpad media dir
 set $scratchdir /media/rish/3662-6638
 
-bindsym $mod+i exec sudo brightnessctl s 5%+
-bindsym $mod+u exec sudo brightnessctl s 5%-
+bindsym $mod+x exec sudo brightnessctl s 5%+
+bindsym $mod+n exec sudo brightnessctl s 5%-

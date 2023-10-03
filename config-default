@@ -104,10 +104,10 @@ bindsym $smod+r reload
 # Moving around:
 #
 # Move your focus around
-bindsym $mod+$left focus left
-bindsym $mod+$down focus down
-bindsym $mod+$up focus up
-bindsym $mod+$right focus right
+# bindsym $mod+$left focus left
+# bindsym $mod+$down focus down
+# bindsym $mod+$up focus up
+# bindsym $mod+$right focus right
 # Or use $mod+[up|down|left|right]
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
@@ -116,8 +116,8 @@ bindsym $mod+Right focus right
 
 bindsym $emod+Space exec swayr next-tiled-window current-workspace
 bindsym $emod+Backspace workspace back_and_forth
-bindsym $mod+Escape workspace back_and_forth
-bindsym $mod+p exec swayr next-tiled-window current-workspace
+bindsym $mod+l workspace back_and_forth
+bindsym $mod+k exec swayr next-tiled-window current-workspace
 
 bindsym $smod+n workspace back_and_forth
 
@@ -152,8 +152,8 @@ bindsym $smod+4 move container to workspace number "4"
 # bindsym $mod+x splitv
 #bindsym $mod+v workspace back_and_forth
 
-bindsym $smod+m exec pactl -- set-sink-volume @DEFAULT_SINK@ -5%
-bindsym $smod+b exec pactl -- set-sink-volume @DEFAULT_SINK@ +5%
+bindsym $mod+m exec pactl -- set-sink-volume @DEFAULT_SINK@ -5%
+bindsym $mod+b exec pactl -- set-sink-volume @DEFAULT_SINK@ +5%
 
 # Switch the current container between different layout styles
 bindsym $mod+s layout stacking
@@ -166,7 +166,7 @@ bindsym $mod+f fullscreen
 # Move focus to the parent container
 # bindsym $mod+a focus parent
 
-bindsym $mod+u exec $HOME/ssh-clipboard.sh
+bindsym $mod+y exec $HOME/ssh-clipboard.sh
 
 #
 # Resizing containers:
