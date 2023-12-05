@@ -11,6 +11,15 @@ mode passthrough {
     bindsym $mod+u scratchpad show; set $currscratch browser; exec bash $curr/open_scratch.sh browser $scratchw $scratchh
     bindsym $mod+i scratchpad show; set $currscratch media;   exec bash $curr/open_scratch.sh media $scratchw $scratchh
     bindsym $mod+o scratchpad show; set $currscratch mail;    exec bash $curr/open_scratch.sh mail $scratchw $scratchh
+    bindsym $mod+x mode "passthrough-blanked"; exec wlr-randr --output DP-1 --off
+}
+
+bindsym $mod+x mode "blanked"; exec wlr-randr --output DP-1 --off
+mode blanked {
+  bindsym Tab mode "default"; exec wlr-randr --output DP-1 --on
+}
+mode passthrough-blanked {
+  bindsym Tab mode "passthrough"; exec wlr-randr --output DP-1 --on
 }
 
 # bindsym $mod+c move scratchpad;exec touch /tmp/scratchpad
@@ -24,4 +33,4 @@ bindsym $mod+o set $currscratch mail;    exec bash $curr/open_scratch.sh mail $s
 
 exec lxterminal
 
-exec clipboard-sync &> /dev/null
+# exec /usr/bin/clipboard-sync &> /dev/null
