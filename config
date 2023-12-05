@@ -17,9 +17,13 @@ mode passthrough {
 bindsym $mod+x mode "blanked"; exec wlr-randr --output DP-1 --off
 mode blanked {
   bindsym Tab mode "default"; exec wlr-randr --output DP-1 --on
+  bindsym $mod+m exec pactl -- set-sink-volume @DEFAULT_SINK@ -5%
+  bindsym $mod+b exec pactl -- set-sink-volume @DEFAULT_SINK@ +5%
 }
 mode passthrough-blanked {
   bindsym Tab mode "passthrough"; exec wlr-randr --output DP-1 --on
+  bindsym $mod+m exec pactl -- set-sink-volume @DEFAULT_SINK@ -5%
+  bindsym $mod+b exec pactl -- set-sink-volume @DEFAULT_SINK@ +5%
 }
 
 # bindsym $mod+c move scratchpad;exec touch /tmp/scratchpad
