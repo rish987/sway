@@ -5,25 +5,12 @@ bindsym $emod+Escape exec bash $curr/open_scratch.sh $currscratch $scratchw $scr
 bindsym $mod+j exec bash $curr/open_scratch.sh $currscratch $scratchw $scratchh
 
 mode passthrough {
-    bindsym $emod+Escape scratchpad show; mode "default"
-    bindsym $mod+j scratchpad show; mode "default"
-    bindsym $emod+Tab mode "default"
-    bindsym $mod+u scratchpad show; set $currscratch browser; exec bash $curr/open_scratch.sh browser $scratchw $scratchh
-    bindsym $mod+i scratchpad show; set $currscratch media;   exec bash $curr/open_scratch.sh media $scratchw $scratchh
-    bindsym $mod+o scratchpad show; set $currscratch mail;    exec bash $curr/open_scratch.sh mail $scratchw $scratchh
-    bindsym $mod+x mode "passthrough-blanked"; exec wlr-randr --output DP-1 --off
-}
-
-bindsym $mod+x mode "blanked"; exec wlr-randr --output DP-1 --off
-mode blanked {
-  bindsym Tab mode "default"; exec wlr-randr --output DP-1 --on
-  bindsym $mod+m exec pactl -- set-sink-volume @DEFAULT_SINK@ -5%
-  bindsym $mod+b exec pactl -- set-sink-volume @DEFAULT_SINK@ +5%
-}
-mode passthrough-blanked {
-  bindsym Tab mode "passthrough"; exec wlr-randr --output DP-1 --on
-  bindsym $mod+m exec pactl -- set-sink-volume @DEFAULT_SINK@ -5%
-  bindsym $mod+b exec pactl -- set-sink-volume @DEFAULT_SINK@ +5%
+  bindsym $emod+Escape scratchpad show; mode "default"
+  bindsym $mod+j scratchpad show; mode "default"
+  bindsym $emod+Tab mode "default"
+  bindsym $mod+u scratchpad show; set $currscratch browser; exec bash $curr/open_scratch.sh browser $scratchw $scratchh
+  bindsym $mod+i scratchpad show; set $currscratch media;   exec bash $curr/open_scratch.sh media $scratchw $scratchh
+  bindsym $mod+o scratchpad show; set $currscratch mail;    exec bash $curr/open_scratch.sh mail $scratchw $scratchh
 }
 
 # bindsym $mod+c move scratchpad;exec touch /tmp/scratchpad

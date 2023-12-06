@@ -11,3 +11,22 @@ set $scratchw 1850
 set $scratchh 1020
 # scratchpad media dir
 set $scratchdir /home/rvaishna/Downloads/youtube
+
+mode passthrough {
+  bindsym $mod+x mode "passthrough-blanked"; exec wlr-randr --output DP-1 --off
+  bindsym $mod+n exec_always WAYLAND_DISPLAY=wayland-1 gammastep -l 0:0 -o -b 0.5:0.5
+}
+
+bindsym $mod+x mode "blanked"; exec wlr-randr --output DP-1 --off
+mode blanked {
+  bindsym Tab mode "default"; exec wlr-randr --output DP-1 --on
+  bindsym $mod+m exec pactl -- set-sink-volume @DEFAULT_SINK@ -5%
+  bindsym $mod+b exec pactl -- set-sink-volume @DEFAULT_SINK@ +5%
+}
+mode passthrough-blanked {
+  bindsym Tab mode "passthrough"; exec wlr-randr --output DP-1 --on
+  bindsym $mod+m exec pactl -- set-sink-volume @DEFAULT_SINK@ -5%
+  bindsym $mod+b exec pactl -- set-sink-volume @DEFAULT_SINK@ +5%
+}
+
+bindsym $mod+n exec_always gammastep -l 0:0 -o -b 0.5:0.5
