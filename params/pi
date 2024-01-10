@@ -13,11 +13,11 @@ set $scratchh 1020
 set $scratchdir /home/rvaishna/Downloads/youtube
 
 mode passthrough {
-  bindsym $mod+x mode "passthrough-blanked"; exec bash $curr/screen.sh off
+  bindsym $mod+h mode "passthrough-blanked"; exec bash $curr/screen.sh off
   bindsym $mod+n exec_always WAYLAND_DISPLAY=wayland-1 gammastep -l 0:0 -o -b 0.5:0.5
 }
 
-bindsym $mod+x mode "passthrough-blanked"; exec bash $curr/screen.sh off
+bindsym $mod+h mode "passthrough-blanked"; exec bash $curr/screen.sh off
 mode blanked {
   bindsym Tab mode "default"; exec bash $curr/screen.sh on
   bindsym $mod+m exec pactl -- set-sink-volume @DEFAULT_SINK@ -5%
