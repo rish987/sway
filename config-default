@@ -166,7 +166,7 @@ bindsym $mod+f fullscreen
 # Move focus to the parent container
 # bindsym $mod+a focus parent
 
-bindsym $mod+y exec $HOME/ssh-clipboard.sh
+# bindsym $mod+y exec $HOME/ssh-clipboard.sh
 
 #
 # Resizing containers:

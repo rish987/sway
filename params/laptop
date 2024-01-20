@@ -31,3 +31,5 @@ mode passthrough-blanked {
   bindsym $mod+m exec pactl -- set-sink-volume @DEFAULT_SINK@ -5%
   bindsym $mod+b exec pactl -- set-sink-volume @DEFAULT_SINK@ +5%
 }
+
+bindsym $mod+y exec bluetoothctl disconnect && bluetoothctl connect A4:77:58:22:83:61
