@@ -29,4 +29,4 @@ mode passthrough-blanked {
   bindsym $mod+b exec pactl -- set-sink-volume @DEFAULT_SINK@ +5%
 }
 
-bindsym $mod+n exec_always gammastep -l 0:0 -o -b 0.5:0.5
+bindsym $mod+n exec_always $curr/gammastep.sh

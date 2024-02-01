@@ -5,6 +5,7 @@ bindsym $emod+Escape exec bash $curr/open_scratch.sh $currscratch $scratchw $scr
 bindsym $mod+j exec bash $curr/open_scratch.sh $currscratch $scratchw $scratchh
 # workaround for bug where multiple scratchpads open -- closes extra scratchpad
 bindsym $mod+p scratchpad show; mode "default"
+bindsym $smod+x exit
 
 mode passthrough {
   bindsym $emod+Escape scratchpad show; mode "default"
