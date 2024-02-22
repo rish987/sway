@@ -1,5 +1,5 @@
 # terminal emulator
-set $term lxterminal
+set $term alacritty
 # internet browser
 set $browser google-chrome
 set $browser_datadir /home/rvaishna/.config/google-chrome/
@@ -14,7 +14,7 @@ set $scratchdir /home/rvaishna/Downloads/youtube
 
 mode passthrough {
   bindsym $mod+h mode "passthrough-blanked"; exec bash $curr/screen.sh off
-  bindsym $mod+n exec_always WAYLAND_DISPLAY=wayland-1 gammastep -l 0:0 -o -b 0.5:0.5
+  bindsym $mod+n exec_always $curr/gammastep.sh
 }
 
 bindsym $mod+h mode "passthrough-blanked"; exec bash $curr/screen.sh off

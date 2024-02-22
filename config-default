@@ -96,7 +96,7 @@ set $right l
 bindsym $smod+q kill
 
 # Reload the configuration file
-bindsym $smod+r reload
+bindsym $mod+r reload
 
 # Exit sway (logs you out of your Wayland session)
 #bindsym $smod+e exec swaynag -t warning -m 'You pressed the exit shortcut.' -B ' Logout ' 'swaymsg exit' -B ' Reboot ' 'systemctl reboot' -B ' Shutdown ' 'systemctl poweroff'
@@ -192,8 +192,9 @@ mode "resize" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+r mode "resize"
+bindsym $smod+r mode "resize"
 bindsym $mod+d exec $menu
+
 
 # Include Directories
 include /etc/sway/config.d/*
@@ -201,3 +202,7 @@ include /etc/sway/config-vars.d/*
 
 bindsym $mod+c exec swayrd > /dev/null 2>&1
 exec swayrd > /dev/null 2>&1 || swayrd > /dev/null 2>&1
+
+seat * hide_cursor 8000
+seat * hide_cursor when-typing enable
+exec gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-Dark'

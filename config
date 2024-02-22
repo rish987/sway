@@ -25,6 +25,6 @@ bindsym $mod+u set $currscratch browser; exec bash $curr/open_scratch.sh browser
 bindsym $mod+i set $currscratch media;   exec bash $curr/open_scratch.sh media $scratchw $scratchh
 bindsym $mod+o set $currscratch mail;    exec bash $curr/open_scratch.sh mail $scratchw $scratchh
 
-exec lxterminal
+exec $term
 
 # exec /usr/bin/clipboard-sync &> /dev/null
