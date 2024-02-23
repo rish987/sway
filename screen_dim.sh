@@ -2,7 +2,7 @@
 
 valuefile="/tmp/value.dat"
 
-# if we don't have a file, start at zero
+# if we don't have a file, start at off
 if [ ! -f "$valuefile" ]; then
     value="off"
 # otherwise read the value from the file
