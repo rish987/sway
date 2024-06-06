@@ -17,7 +17,7 @@ mode passthrough {
   bindsym $mod+n exec_always $curr/gammastep.sh
 }
 
-bindsym $mod+h mode "passthrough-blanked"; exec bash $curr/screen.sh off
+bindsym $mod+h mode "blanked"; exec bash $curr/screen.sh off
 mode blanked {
   bindsym Tab mode "default"; exec bash $curr/screen.sh on
   bindsym $mod+m exec pactl -- set-sink-volume @DEFAULT_SINK@ -5%

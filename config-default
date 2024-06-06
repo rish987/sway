@@ -96,7 +96,7 @@ set $right l
 bindsym $smod+q kill
 
 # Reload the configuration file
-bindsym $mod+r reload
+bindsym $smod+r reload
 
 # Exit sway (logs you out of your Wayland session)
 #bindsym $smod+e exec swaynag -t warning -m 'You pressed the exit shortcut.' -B ' Logout ' 'swaymsg exit' -B ' Reboot ' 'systemctl reboot' -B ' Shutdown ' 'systemctl poweroff'
@@ -163,6 +163,8 @@ bindsym $mod+e layout toggle split
 # Make the current focus fullscreen
 bindsym $mod+f fullscreen
 
+bindsym $mod+y exec bluetoothctl disconnect && bluetoothctl connect A4:77:58:22:47:BC
+
 # Move focus to the parent container
 # bindsym $mod+a focus parent
 
@@ -192,7 +194,7 @@ mode "resize" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $smod+r mode "resize"
+bindsym $mod+r mode "resize"
 bindsym $mod+d exec $menu
 
 
