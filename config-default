@@ -96,7 +96,7 @@ set $right l
 bindsym $smod+q kill
 
 # Reload the configuration file
-bindsym $smod+r reload
+bindsym $mod+r reload
 
 # Exit sway (logs you out of your Wayland session)
 #bindsym $smod+e exec swaynag -t warning -m 'You pressed the exit shortcut.' -B ' Logout ' 'swaymsg exit' -B ' Reboot ' 'systemctl reboot' -B ' Shutdown ' 'systemctl poweroff'
@@ -116,7 +116,7 @@ bindsym $mod+Right focus right
 
 bindsym $emod+Space exec swayr next-tiled-window current-workspace
 bindsym $emod+Backspace workspace back_and_forth
-bindsym $mod+l workspace back_and_forth
+bindsym $mod+Escape workspace back_and_forth
 bindsym $mod+k exec swayr next-tiled-window current-workspace
 
 bindsym $smod+n workspace back_and_forth
@@ -194,7 +194,7 @@ mode "resize" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+r mode "resize"
+bindsym $smod+r mode "resize"
 bindsym $mod+d exec $menu
 
 
