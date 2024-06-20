@@ -5,6 +5,6 @@ include config-default
 exec $filetree $scratchdir
 exec vlc
 workspace number "2"
-exec bash $curr/nested_chrome.sh media $browser $browser_datadir
+exec bash $curr/nested_chrome.sh media $browser $browser_datadir "https://youtube.com/"
 bindsym $mod+a exec echo "$curr/nested_chrome.sh media $browser $browser_datadir" > ~/test
 workspace number "1"

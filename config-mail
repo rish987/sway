@@ -4,5 +4,5 @@ include config-default
 # hack until I learn how to properly save sessions
 exec thunderbird
 workspace number "2"
-exec bash $curr/nested_chrome.sh mail $browser $browser_datadir www.gmail.com
+exec bash $curr/nested_chrome.sh mail $browser $browser_datadir "www.gmail.com" "https://leanprover.zulipchat.com/" "https://deducteam.zulipchat.com/"
 workspace number "1"

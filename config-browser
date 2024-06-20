@@ -1,4 +1,4 @@
 # config for nested sway session, use in scratchpad
 include config-default
 
-exec $browser
+exec $browser github.com
