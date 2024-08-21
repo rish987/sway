@@ -11,4 +11,4 @@ rsync -av --delete --exclude=/Singleton* $3/ $tmpdir > /dev/null
 browser=$2
 
 shift 3
-$browser --user-data-dir=$tmpdir "$@"
+$browser --disable-session-crashed-bubble --user-data-dir=$tmpdir "$@"

@@ -163,7 +163,7 @@ bindsym $mod+e layout toggle split
 # Make the current focus fullscreen
 bindsym $mod+f fullscreen
 
-bindsym $mod+y exec bluetoothctl disconnect && bluetoothctl connect A4:77:58:22:47:BC
+# bindsym $mod+y exec bluetoothctl disconnect && bluetoothctl connect A4:77:58:22:47:BC
 
 # Move focus to the parent container
 # bindsym $mod+a focus parent

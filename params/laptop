@@ -1,5 +1,5 @@
 # terminal emulator
-set $term lxterminal
+set $term /home/rish/.cargo/bin/alacritty
 # internet browser
 #set $browser /snap/chromium/current/usr/lib/chromium-browser/chrome
 set $browser google-chrome
