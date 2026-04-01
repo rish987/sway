@@ -14,7 +14,7 @@ fi
 
 echo "${scratch_type}" > "$valuefile"
 
-configfile="$HOME/.config/sway/config-$scratch_type"
+configfile="$HOME/.config/sway/run-$scratch_type.sh"
 
 if [ ! -f "$configfile" ]; then
     exit
@@ -22,4 +22,4 @@ fi
 
 # echo "opening scratch: $1" >> ~/scratch-log
 
-swaymsg "[con_mark=$scratch_type] scratchpad show, mode passthrough" || (sway -c "$configfile" & PID=$! && sleep 1 && swaymsg "[pid=$PID] move to scratchpad, scratchpad show, mode passthrough, mark $scratch_type, resize set $2 $3")
+swaymsg "[con_mark=$scratch_type] scratchpad show" || ($configfile & PID=$! && sleep 1 && swaymsg "[pid=$PID] move to scratchpad, mark $scratch_type, resize set $2 $3")

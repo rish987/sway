@@ -4,6 +4,8 @@
 #
 # Read `man 5 sway` for a complete reference.
 
+# exec env RUST_BACKTRACE=1 RUST_LOG=swayr=debug swayrd > /tmp/swayrd.log 2>&1 &
+
 ###############
 # My settings #
 ###############
@@ -38,6 +40,7 @@ bindsym $mod+F2 exec $browser
 bindsym $mod+F3 exec $filetree
 bindsym $mod+F4 exec $term
 bindsym $mod+t exec $term
+bindsym $mod+w exec env RUST_BACKTRACE=1 RUST_LOG=swayr=debug swayrd > /tmp/swayrd.log 2>&1
 
 ## Windows ##
 default_orientation auto
@@ -52,7 +55,7 @@ gaps vertical 0
 smart_borders on
 smart_gaps on
 title_align center
-font pango:12
+#font pango:12
 #workspace_layout tabbed
 
 ## Floating Window ##
@@ -118,6 +121,7 @@ bindsym $emod+Space exec swayr next-tiled-window current-workspace
 bindsym $emod+Backspace workspace back_and_forth
 bindsym $mod+Escape workspace back_and_forth
 bindsym $mod+k exec swayr next-tiled-window current-workspace
+bindsym $mod+l workspace back_and_forth
 
 bindsym $smod+n workspace back_and_forth
 
@@ -157,7 +161,7 @@ bindsym $mod+b exec pactl -- set-sink-volume @DEFAULT_SINK@ +5%
 
 # Switch the current container between different layout styles
 bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+#bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # Make the current focus fullscreen

@@ -1,20 +1,20 @@
 include config-default
 
-bindsym $emod+Tab mode "passthrough"
-bindsym $emod+Escape exec bash $curr/open_scratch.sh curr $scratchw $scratchh
-bindsym $mod+j exec bash $curr/open_scratch.sh curr $scratchw $scratchh
-# workaround for bug where multiple scratchpads open -- closes extra scratchpad
-bindsym $mod+p scratchpad show; mode "default"
+# bindsym $emod+Tab mode "passthrough"
+# bindsym $emod+Escape exec bash $curr/open_scratch.sh curr $scratchw $scratchh
+bindsym $mod+j exec bash $curr/swap.sh
+# # workaround for bug where multiple scratchpads open -- closes extra scratchpad
+# bindsym $mod+p scratchpad show; mode "default"
 bindsym $smod+x exit
 
-mode passthrough {
-  bindsym $emod+Escape scratchpad show; mode "default"
-  bindsym $mod+j scratchpad show; mode "default"
-  bindsym $emod+Tab mode "default"
-  bindsym $mod+u scratchpad show; exec bash $curr/open_scratch.sh browser $scratchw $scratchh
-  bindsym $mod+i scratchpad show; exec bash $curr/open_scratch.sh media $scratchw $scratchh
-  bindsym $mod+o scratchpad show; exec bash $curr/open_scratch.sh mail $scratchw $scratchh
-}
+# mode passthrough {
+#   bindsym $emod+Escape scratchpad show; mode "default"
+#   bindsym $mod+j scratchpad show; mode "default"
+#   bindsym $emod+Tab mode "default"
+#   bindsym $mod+u scratchpad show; exec bash $curr/open_scratch.sh browser $scratchw $scratchh
+#   bindsym $mod+i scratchpad show; exec bash $curr/open_scratch.sh media $scratchw $scratchh
+#   bindsym $mod+o scratchpad show; exec bash $curr/open_scratch.sh mail $scratchw $scratchh
+# }
 
 # bindsym $mod+c move scratchpad;exec touch /tmp/scratchpad
 # bindsym $mod+b scratchpad show;resize set $scratchw $scratchh
@@ -22,8 +22,8 @@ bindsym $smod+space floating toggle;exec rm  /tmp/scratchpad
 bindsym $mod+g exec sway -c ~/.config/sway/config-scratch && sway move scratchpad
 
 bindsym $mod+u exec bash $curr/open_scratch.sh browser $scratchw $scratchh
-bindsym $mod+i exec bash $curr/open_scratch.sh media $scratchw $scratchh
-bindsym $mod+o exec bash $curr/open_scratch.sh mail $scratchw $scratchh
+# bindsym $mod+i exec bash $curr/open_scratch.sh media $scratchw $scratchh
+# bindsym $mod+o exec bash $curr/open_scratch.sh mail $scratchw $scratchh
 
 exec $term
 
