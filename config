@@ -3,6 +3,7 @@ include config-default
 # bindsym $emod+Tab mode "passthrough"
 # bindsym $emod+Escape exec bash $curr/open_scratch.sh curr $scratchw $scratchh
 bindsym $mod+j exec bash $curr/swap.sh
+# bindsym $mod+j workspace back_and_forth
 # # workaround for bug where multiple scratchpads open -- closes extra scratchpad
 # bindsym $mod+p scratchpad show; mode "default"
 bindsym $smod+x exit

@@ -12,8 +12,8 @@ fi
 
 # show it to the user
 echo "value: ${value}"
-temp=3500
-brightness=0.45
+temp=3000
+brightness=0.85
 
 if [ "$value" = "off" ]; then
   gammastep -l 0:0 -o -b $brightness:$brightness -t $temp:$temp &

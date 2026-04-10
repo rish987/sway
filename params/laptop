@@ -15,6 +15,7 @@ set $scratchdir /home/rish/Downloads/
 
 bindsym $mod+x exec sudo brightnessctl s 5%+
 bindsym $mod+n exec sudo brightnessctl s 5%-
+bindsym $mod+o exec_always $curr/gammastep.sh
 
 mode passthrough {
   bindsym $mod+h mode "passthrough-blanked"; exec bash $curr/screen.sh off
@@ -32,4 +33,4 @@ mode passthrough-blanked {
   bindsym $mod+b exec pactl -- set-sink-volume @DEFAULT_SINK@ +5%
 }
 
-bindsym $mod+y exec bluetoothctl disconnect && bluetoothctl connect A4:77:58:22:83:61
+# bindsym $mod+y exec bluetoothctl disconnect && bluetoothctl connect A4:77:58:22:83:61
